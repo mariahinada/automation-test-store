@@ -1,6 +1,6 @@
 export const CreateAccountElements = {
-    loginOrRegisterBtn: 'a[title="Login or Register"]',
-    continueBtn: 'button[title="Continue"]',
+    loginOrRegisterBtn: '#customer_menu_top > li > a',
+    continueBtnToRegister: '#accountFrm > fieldset > .btn',
     firstName:'#AccountFrm_firstname',
     lastName:'#AccountFrm_lastname',
     emailAddress:'#AccountFrm_email',
@@ -18,5 +18,6 @@ export const CreateAccountElements = {
     confirmPassword:'#AccountFrm_confirm',
     newsletter:'#AccountFrm_newsletter1',
     privacyPolicy:'#AccountFrm_agree',
+    continueBtnToFinish:'.col-md-2 > .btn',
     successMessage:'.maintext'
 }

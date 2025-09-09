@@ -2,11 +2,11 @@ import { CreateAccountElements } from "../elements/create-account-elements"
 
 export class CreateAccountService {
   clickLoginOrRegister() {
-    cy.get(CreateAccountElements.clickLoginOrRegisterBtn).click()
+    cy.get(CreateAccountElements.loginOrRegisterBtn).click()
   }
 
-  clickContinue() {
-    cy.get(CreateAccountElements.continueBtn).click()
+  clickContinueBtnToRegister() {
+    cy.get(CreateAccountElements.continueBtnToRegister).click()
   }
 
   fillFirstName(name) {
@@ -75,5 +75,13 @@ export class CreateAccountService {
 
   acceptPrivacyPolicy() {
     cy.get(CreateAccountElements.privacyPolicy).check()
+  }
+
+  clickContinueBtnToFinish() {
+    cy.get(CreateAccountElements.continueBtnToFinish).click()
+  }
+
+  showSuccessMessage() {
+    cy.get(CreateAccountElements.successMessage)
   }
 }

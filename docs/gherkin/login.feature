@@ -1,6 +1,6 @@
 Feature: Criação de Conta no Automation Test Store
 
-Scenario: Criando Conta
+Scenario: Criando Conta c/ Sucesso
     Given Que estou na página inicial
     When Clico no botão "Login or Register"
     And Encontro botão de "Continue" para criar uma Conta
