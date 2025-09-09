@@ -1,0 +1,22 @@
+export const CreateAccountElements = {
+    loginOrRegisterBtn: 'a[title="Login or Register"]',
+    continueBtn: 'button[title="Continue"]',
+    firstName:'#AccountFrm_firstname',
+    lastName:'#AccountFrm_lastname',
+    emailAddress:'#AccountFrm_email',
+    telephone:'#AccountFrm_telephone',
+    fax:'#AccountFrm_fax',
+    company:'#AccountFrm_company',
+    address1:'#AccountFrm_address_1',
+    address2:'#AccountFrm_address_2',
+    city:'#AccountFrm_city',
+    state:'#AccountFrm_zone_id',
+    zipCode:'#AccountFrm_postcode',
+    country:'#AccountFrm_country_id',
+    loginName:'#AccountFrm_loginname',
+    password:'#AccountFrm_password',
+    confirmPassword:'#AccountFrm_confirm',
+    newsletter:'#AccountFrm_newsletter1',
+    privacyPolicy:'#AccountFrm_agree',
+    successMessage:'.maintext'
+}
