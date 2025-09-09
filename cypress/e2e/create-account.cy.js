@@ -1,6 +1,7 @@
 import { CreateAccountElements } from "../elements/create-account-elements";
 import { CreateAccountService } from "../services/create-account-service";
 import { RandomDataHelper } from "../helpers/randomData";
+import { CreateAccountExpectations } from "../expectations/create-account-expectations";
 
 describe("Criação de Conta no Automation Test Store", () => {
   const service = new CreateAccountService()
@@ -32,7 +33,6 @@ describe("Criação de Conta no Automation Test Store", () => {
     service.clickContinueBtnToFinish()
 
     // then
-    cy.get(CreateAccountElements.successMessage)
-    .should("contain.text", "Your Account Has Been Created!")
+    CreateAccountExpectations.sucessMessageDisplayed()
   })
 })
