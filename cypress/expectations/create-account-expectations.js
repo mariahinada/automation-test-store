@@ -1,8 +1,7 @@
-import { CreateAccountElements } from "../elements/create-account-elements"
+import { AbstractExpectation } from "./abstract-expectation"
 
-export const CreateAccountExpectations = {
-    sucessMessageDisplayed() {
-        cy.get(CreateAccountElements.successMessage)
-        .should("contain.text"," Your Account Has Been Created!")
+export class CreateAccountExpectations extends AbstractExpectation {
+    successMessageDisplayed() {
+        this.expectElementToHaveText('.maintext', "Your Account Has Been Created!");
     }
 }

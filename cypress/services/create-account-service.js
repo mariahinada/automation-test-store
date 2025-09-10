@@ -1,4 +1,6 @@
-export class CreateAccountService {
+import { AbstractService } from "./abstract-service"
+
+export class CreateAccountService extends AbstractService {
   elements = {
     loginOrRegisterBtn: "#customer_menu_top > li > a",
     continueBtnToRegister: "#accountFrm > fieldset > .btn",
@@ -24,86 +26,86 @@ export class CreateAccountService {
   }
 
   clickLoginOrRegister() {
-    cy.get(this.elements.loginOrRegisterBtn).click()
+    this.click(this.elements.loginOrRegisterBtn)
   }
 
   clickContinueBtnToRegister() {
-    cy.get(this.elements.continueBtnToRegister).click()
+    this.click(this.elements.continueBtnToRegister)
   }
 
   fillFirstName(name) {
-    cy.get(this.elements.firstName).type(name)
+    this.type(this.elements.firstName, name)
   }
 
   fillLastName(lastName) {
-    cy.get(this.elements.lastName).type(lastName)
+    this.type(this.elements.lastName, lastName)
   }
 
   fillEmail(email) {
-    cy.get(this.elements.emailAddress).type(email)
+    this.type(this.elements.emailAddress, email)
   }
 
   fillTelephone(telephone) {
-    cy.get(this.elements.telephone).type(telephone)
+    this.type(this.elements.telephone, telephone)
   }
 
   fillFax(fax) {
-    cy.get(this.elements.fax).type(fax)
+    this.type(this.elements.fax, fax)
   }
 
   fillCompany(company) {
-    cy.get(this.elements.company).type(company)
+    this.type(this.elements.company, company)
   }
 
   fillAddress1(address) {
-    cy.get(this.elements.address1).type(address)
+    this.type(this.elements.address1, address)
   }
 
   fillAddress2(address) {
-    cy.get(this.elements.address2).type(address)
+    this.type(this.elements.address2, address)
   }
 
   fillCity(city) {
-    cy.get(this.elements.city).type(city)
+    this.type(this.elements.city, city)
   }
 
   selectState(state) {
-    cy.get(this.elements.state).select(state)
+    this.select(this.elements.state, state)
   }
 
   fillZipCode(zip) {
-    cy.get(this.elements.zipCode).type(zip)
+    this.type(this.elements.zipCode, zip)
   }
 
   selectCountry(country) {
-    cy.get(this.elements.country).select(country)
+    this.select(this.elements.country, country)
   }
 
   fillLoginName(loginName) {
-    cy.get(this.elements.loginName).type(loginName)
+    this.type(this.elements.loginName, loginName)
   }
 
   fillPassword(password) {
-    cy.get(this.elements.password).type(password)
+    this.type(this.elements.password, password)
   }
 
   fillConfirmPassword(password) {
-    cy.get(this.elements.confirmPassword).type(password)
+    this.type(this.elements.confirmPassword, password)
   }
 
-  subscribeNewsLetter(option = "yes") {
-    cy.get(this.elements.newsletter).check()
+  subscribeNewsLetter() {
+    this.check(this.elements.newsletter)
   }
 
-  acceptPrivacyPolicy() {
-    cy.get(this.elements.privacyPolicy).check()
+  acceptprivacyPolicy() {
+    this.check(this.elements.privacyPolicy)
   }
 
   clickContinueBtnToFinish() {
-    cy.get(this.elements.continueBtnToFinish).click()
+    this.click(this.elements.continueBtnToFinish)
   }
 
   showSuccessMessage() {
-    cy.get(this.elements.successMessage)
+    this.get(this.elements.successMessage)
   }
 }

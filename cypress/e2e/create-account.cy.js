@@ -1,10 +1,10 @@
-import { CreateAccountElements } from "../elements/create-account-elements";
 import { CreateAccountService } from "../services/create-account-service";
 import { RandomDataHelper } from "../helpers/randomData";
 import { CreateAccountExpectations } from "../expectations/create-account-expectations";
 
 describe("Criação de Conta no Automation Test Store", () => {
   const service = new CreateAccountService()
+  const expect = new CreateAccountExpectations()
 
   it("Criando Conta c/ Sucesso", () => {
     // given
@@ -21,7 +21,7 @@ describe("Criação de Conta no Automation Test Store", () => {
     service.fillCompany("Empresa")
     service.fillAddress1("Endereço 1")
     service.fillAddress2("Endereço 2")
-    service.fillCity("Sao Paulo")
+    service.fillCity("São Paulo")
     service.selectCountry("Brazil")
     service.selectState("Sao Paulo")
     service.fillZipCode("00000-000")
@@ -29,10 +29,10 @@ describe("Criação de Conta no Automation Test Store", () => {
     service.fillPassword("senha123")
     service.fillConfirmPassword("senha123")
     service.subscribeNewsLetter()
-    service.acceptPrivacyPolicy()
+    service.acceptprivacyPolicy()
     service.clickContinueBtnToFinish()
 
     // then
-    CreateAccountExpectations.sucessMessageDisplayed()
+    expect.successMessageDisplayed()
   })
 })
