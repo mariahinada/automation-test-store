@@ -1,2 +1,2 @@
-# automationteststore
+# automation-test-store
 
