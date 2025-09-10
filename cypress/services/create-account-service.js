@@ -24,86 +24,86 @@ export class CreateAccountService {
   }
 
   clickLoginOrRegister() {
-    cy.get(CreateAccountElements.loginOrRegisterBtn).click()
+    cy.get(this.elements.loginOrRegisterBtn).click()
   }
 
   clickContinueBtnToRegister() {
-    cy.get(CreateAccountElements.continueBtnToRegister).click()
+    cy.get(this.elements.continueBtnToRegister).click()
   }
 
   fillFirstName(name) {
-    cy.get(CreateAccountElements.firstName).type(name)
+    cy.get(this.elements.firstName).type(name)
   }
 
   fillLastName(lastName) {
-    cy.get(CreateAccountElements.lastName).type(lastName)
+    cy.get(this.elements.lastName).type(lastName)
   }
 
   fillEmail(email) {
-    cy.get(CreateAccountElements.emailAddress).type(email)
+    cy.get(this.elements.emailAddress).type(email)
   }
 
   fillTelephone(telephone) {
-    cy.get(CreateAccountElements.telephone).type(telephone)
+    cy.get(this.elements.telephone).type(telephone)
   }
 
   fillFax(fax) {
-    cy.get(CreateAccountElements.fax).type(fax)
+    cy.get(this.elements.fax).type(fax)
   }
 
   fillCompany(company) {
-    cy.get(CreateAccountElements.company).type(company)
+    cy.get(this.elements.company).type(company)
   }
 
   fillAddress1(address) {
-    cy.get(CreateAccountElements.address1).type(address)
+    cy.get(this.elements.address1).type(address)
   }
 
   fillAddress2(address) {
-    cy.get(CreateAccountElements.address2).type(address)
+    cy.get(this.elements.address2).type(address)
   }
 
   fillCity(city) {
-    cy.get(CreateAccountElements.city).type(city)
+    cy.get(this.elements.city).type(city)
   }
 
   selectState(state) {
-    cy.get(CreateAccountElements.state).select(state)
+    cy.get(this.elements.state).select(state)
   }
 
   fillZipCode(zip) {
-    cy.get(CreateAccountElements.zipCode).type(zip)
+    cy.get(this.elements.zipCode).type(zip)
   }
 
   selectCountry(country) {
-    cy.get(CreateAccountElements.country).select(country)
+    cy.get(this.elements.country).select(country)
   }
 
   fillLoginName(loginName) {
-    cy.get(CreateAccountElements.loginName).type(loginName)
+    cy.get(this.elements.loginName).type(loginName)
   }
 
   fillPassword(password) {
-    cy.get(CreateAccountElements.password).type(password)
+    cy.get(this.elements.password).type(password)
   }
 
   fillConfirmPassword(password) {
-    cy.get(CreateAccountElements.confirmPassword).type(password)
+    cy.get(this.elements.confirmPassword).type(password)
   }
 
   subscribeNewsLetter(option = "yes") {
-    cy.get(CreateAccountElements.newsletter).check()
+    cy.get(this.elements.newsletter).check()
   }
 
   acceptPrivacyPolicy() {
-    cy.get(CreateAccountElements.privacyPolicy).check()
+    cy.get(this.elements.privacyPolicy).check()
   }
 
   clickContinueBtnToFinish() {
-    cy.get(CreateAccountElements.continueBtnToFinish).click()
+    cy.get(this.elements.continueBtnToFinish).click()
   }
 
   showSuccessMessage() {
-    cy.get(CreateAccountElements.successMessage)
+    cy.get(this.elements.successMessage)
   }
 }
