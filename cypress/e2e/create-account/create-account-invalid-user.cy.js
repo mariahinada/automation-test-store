@@ -1,8 +1,8 @@
-import { CreateAccountInvalidUserService } from "../../services/create-account/create-account-success-service"
+import { CreateAccountInvalidUserService } from "../../services/create-account/create-account-invalid-user-service"
 import { RandomDataHelper } from "../../helpers/randomData"
-import { CreateAccountInvalidUserExpectations } from "../../services/create-account/create-account-invalid-user"
+import { CreateAccountInvalidUserExpectations } from "../../expectations/create-account/create-account-invalid-user-expectations"
 
-describe("Criação de Conta no Automation Test Store"), () => {
+describe("Criação de Conta no Automation Test Store", () => {
     const service = new CreateAccountInvalidUserService()
     const expect = new CreateAccountInvalidUserExpectations()
 it("Cadastro com usuário inválido", () => {
@@ -24,7 +24,7 @@ it("Cadastro com usuário inválido", () => {
     service.selectCountry("Brazil")
     service.selectState("Sao Paulo")
     service.fillZipCode("00000-000")
-    service.fillLoginName(RandomDataHelper.randomLogin())
+    service.fillLoginName("usu")
     service.fillPassword("senha123")
     service.fillConfirmPassword("senha123")
     service.subscribeNewsLetter()
@@ -32,6 +32,6 @@ it("Cadastro com usuário inválido", () => {
     service.clickContinueBtnToFinish()
 
     // then
-    expect.successMessageDisplayed()
+    expect.showInvalidUserAlert()
   })
-}
+})
