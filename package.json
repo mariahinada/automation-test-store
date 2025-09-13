@@ -10,6 +10,17 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^15.1.0"
-  }
+    "cypress": "^15.2.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariahinada/automation-test-store.git"
+  },
+  "bugs": {
+    "url": "https://github.com/mariahinada/automation-test-store/issues"
+  },
+  "homepage": "https://github.com/mariahinada/automation-test-store#readme"
 }

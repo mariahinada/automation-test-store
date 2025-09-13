@@ -1,6 +1,6 @@
-import { AbstractExpectation } from "./abstractExpectations"
+import { AbstractExpectation } from "../abstract-expectations"
 
-export class CreateAccountExpectations extends AbstractExpectation {
+export class CreateAccountSuccessExpectations extends AbstractExpectation {
     successMessageDisplayed() {
         this.expectElementToHaveText('.maintext', "Your Account Has Been Created!");
     }

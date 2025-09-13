@@ -1,6 +1,6 @@
 import { AbstractService } from "../abstract-service"
 
-export class CreateAccountSuccessService extends AbstractService {
+export class CreateAccountInvalidUserService extends AbstractService {
   elements = {
     loginOrRegisterBtn: "#customer_menu_top > li > a",
     continueBtnToRegister: "#accountFrm > fieldset > .btn",
@@ -22,7 +22,8 @@ export class CreateAccountSuccessService extends AbstractService {
     newsletter: "#AccountFrm_newsletter1",
     privacyPolicy: "#AccountFrm_agree",
     continueBtnToFinish: ".col-md-2 > .btn",
-    successMessage: ".maintext",
+    invalidUserAlert:
+      "#maincontainer > div > div > div > div.alert.alert-error.alert-danger",
   }
 
   clickLoginOrRegister() {
@@ -31,8 +32,7 @@ export class CreateAccountSuccessService extends AbstractService {
 
   clickContinueBtnToRegister() {
     this.click(this.elements.continueBtnToRegister)
-  }
-
+  } 
   fillFirstName(name) {
     this.type(this.elements.firstName, name)
   }
@@ -105,7 +105,7 @@ export class CreateAccountSuccessService extends AbstractService {
     this.click(this.elements.continueBtnToFinish)
   }
 
-  showSuccessMessage() {
-    this.get(this.elements.successMessage)
+  showInvalidUserAlert() {
+    this.get(this.elements.invalidUserAlert)
   }
 }

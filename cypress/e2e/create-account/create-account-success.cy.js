@@ -1,10 +1,10 @@
-import { CreateAccountService } from "../../services/create-account/create-account-success-service";
+import { CreateAccountSuccessService } from "../../services/create-account/create-account-success-service";
 import { RandomDataHelper } from "../../helpers/randomData";
-import { CreateAccountExpectations } from "../../expectations/createAccountSuccessExpectations";
+import { CreateAccountSuccessExpectations} from "../../expectations/create-account/createAccountSuccessExpectations";
 
-describe("Criação de Conta no Automation Test Store", () => {
-  const service = new CreateAccountService()
-  const expect = new CreateAccountExpectations()
+describe("Cadastro válido", () => {
+  const service = new CreateAccountSuccessService()
+  const expect = new CreateAccountSuccessExpectations()
 
   it("Criando Conta c/ Sucesso", () => {
     // given
