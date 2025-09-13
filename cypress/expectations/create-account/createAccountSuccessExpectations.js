@@ -1,4 +1,4 @@
-import { AbstractExpectation } from "./abstract-expectation"
+import { AbstractExpectation } from "./abstractExpectations"
 
 export class CreateAccountExpectations extends AbstractExpectation {
     successMessageDisplayed() {

@@ -1,6 +1,6 @@
-import { CreateAccountService } from "../services/create-account-service";
-import { RandomDataHelper } from "../helpers/randomData";
-import { CreateAccountExpectations } from "../expectations/create-account-expectations";
+import { CreateAccountService } from "../../services/create-account/create-account-success-service";
+import { RandomDataHelper } from "../../helpers/randomData";
+import { CreateAccountExpectations } from "../../expectations/createAccountSuccessExpectations";
 
 describe("Criação de Conta no Automation Test Store", () => {
   const service = new CreateAccountService()
