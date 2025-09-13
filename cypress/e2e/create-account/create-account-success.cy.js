@@ -1,6 +1,6 @@
 import { CreateAccountSuccessService } from "../../services/create-account/create-account-success-service";
 import { RandomDataHelper } from "../../helpers/randomData";
-import { CreateAccountSuccessExpectations} from "../../expectations/create-account/createAccountSuccessExpectations";
+import { CreateAccountSuccessExpectations} from "../../expectations/create-account/create-account-success-expectations";
 
 describe("Cadastro válido", () => {
   const service = new CreateAccountSuccessService()
@@ -33,6 +33,6 @@ describe("Cadastro válido", () => {
     service.clickContinueBtnToFinish()
 
     // then
-    expect.successMessageDisplayed()
+    expect.showSuccessMessage()
   })
 })
