@@ -1,6 +1,6 @@
 # Automation Test Store - Projeto de Testes E2E
 
-Projeto de automação de testes end-to-end (E2E) para o site Automation Test Store, implementado com Cypress e seguindo padrões de Page Objects e Page Components.
+Projeto de automação de testes end-to-end (E2E) para o site Automation Test Store, implementado com Cypress
 
 ## Sobre o Projeto
 
