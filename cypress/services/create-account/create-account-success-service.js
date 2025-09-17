@@ -1,4 +1,4 @@
-import { AbstractService } from "../abstract-service"
+import { AbstractService } from "../abstract-service";
 
 export class CreateAccountSuccessService extends AbstractService {
   elements = {
@@ -23,89 +23,89 @@ export class CreateAccountSuccessService extends AbstractService {
     privacyPolicy: "#AccountFrm_agree",
     continueBtnToFinish: ".col-md-2 > .btn",
     successMessage: ".maintext",
-  }
+  };
 
   clickLoginOrRegister() {
-    this.click(this.elements.loginOrRegisterBtn)
+    this.click(this.elements.loginOrRegisterBtn);
   }
 
   clickContinueBtnToRegister() {
-    this.click(this.elements.continueBtnToRegister)
+    this.click(this.elements.continueBtnToRegister);
   }
 
   fillFirstName(name) {
-    this.type(this.elements.firstName, name)
+    this.type(this.elements.firstName, name);
   }
 
   fillLastName(lastName) {
-    this.type(this.elements.lastName, lastName)
+    this.type(this.elements.lastName, lastName);
   }
 
   fillEmail(email) {
-    this.type(this.elements.emailAddress, email)
+    this.type(this.elements.emailAddress, email);
   }
 
   fillTelephone(telephone) {
-    this.type(this.elements.telephone, telephone)
+    this.type(this.elements.telephone, telephone);
   }
 
   fillFax(fax) {
-    this.type(this.elements.fax, fax)
+    this.type(this.elements.fax, fax);
   }
 
   fillCompany(company) {
-    this.type(this.elements.company, company)
+    this.type(this.elements.company, company);
   }
 
   fillAddress1(address) {
-    this.type(this.elements.address1, address)
+    this.type(this.elements.address1, address);
   }
 
   fillAddress2(address) {
-    this.type(this.elements.address2, address)
+    this.type(this.elements.address2, address);
   }
 
   fillCity(city) {
-    this.type(this.elements.city, city)
+    this.type(this.elements.city, city);
   }
 
   selectState(state) {
-    this.select(this.elements.state, state)
+    this.select(this.elements.state, state);
   }
 
   fillZipCode(zip) {
-    this.type(this.elements.zipCode, zip)
+    this.type(this.elements.zipCode, zip);
   }
 
   selectCountry(country) {
-    this.select(this.elements.country, country)
+    this.select(this.elements.country, country);
   }
 
   fillLoginName(loginName) {
-    this.type(this.elements.loginName, loginName)
+    this.type(this.elements.loginName, loginName);
   }
 
   fillPassword(password) {
-    this.type(this.elements.password, password)
+    this.type(this.elements.password, password);
   }
 
   fillConfirmPassword(password) {
-    this.type(this.elements.confirmPassword, password)
+    this.type(this.elements.confirmPassword, password);
   }
 
   subscribeNewsLetter() {
-    this.check(this.elements.newsletter)
+    this.check(this.elements.newsletter);
   }
 
   acceptprivacyPolicy() {
-    this.check(this.elements.privacyPolicy)
+    this.check(this.elements.privacyPolicy);
   }
 
   clickContinueBtnToFinish() {
-    this.click(this.elements.continueBtnToFinish)
+    this.click(this.elements.continueBtnToFinish);
   }
 
   showSuccessMessage() {
-    this.get(this.elements.successMessage)
+    this.get(this.elements.successMessage);
   }
 }

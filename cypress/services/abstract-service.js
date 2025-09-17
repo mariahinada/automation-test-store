@@ -1,33 +1,39 @@
 export class AbstractService {
   constructor(baseSelector = "") {
-    this.baseSelector = baseSelector
+    this.baseSelector = baseSelector;
   }
 
   visit(path = "") {
-    cy.visit(path)
+    cy.visit(path);
   }
 
   click(selector) {
-    if (!selector) throw new Error("Nenhum seletor informado para click")
-    cy.get(selector).click()
+    if (!selector) throw new Error("Nenhum seletor informado para click");
+    cy.get(selector).click();
   }
 
   type(selector, value) {
-    if (!value) throw new Error(`Nenhum valor passado para select no elemento: ${selector}`)
-    cy.get(selector).type(value)
+    if (!value)
+      throw new Error(
+        `Nenhum valor passado para select no elemento: ${selector}`
+      );
+    cy.get(selector).type(value);
   }
 
   select(selector, option) {
-    if (!option) throw new Error(`Nenhum valor passado para o select no elemento: ${selector}`)
-    cy.get(selector).select(option)
+    if (!option)
+      throw new Error(
+        `Nenhum valor passado para o select no elemento: ${selector}`
+      );
+    cy.get(selector).select(option);
   }
 
   check(selector) {
-    if (!selector) throw new Error("Nenhum seletor informado para check")
-    cy.get(selector).check()
+    if (!selector) throw new Error("Nenhum seletor informado para check");
+    cy.get(selector).check();
   }
 
   getText(selector) {
-    return cy.get(selector).invoke("text")
+    return cy.get(selector).invoke("text");
   }
 }
