@@ -6,9 +6,9 @@ describe("Cadastro válido", () => {
   const service = new CreateAccountSuccessService();
   const expect = new CreateAccountSuccessExpectations();
 
-  it("Criando Conta c/ Sucesso", () => {
+  it("Cadastro com usuário válido", () => {
     // given
-    cy.visit("https://automationteststore.com/");
+    cy.visit("/index.php?rt=account/create");
 
     // when
     service.clickLoginOrRegister();

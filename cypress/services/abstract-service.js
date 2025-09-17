@@ -4,7 +4,7 @@ export class AbstractService {
   }
 
   visit(path = "") {
-    cy.visit(path);
+    cy.visit(`${Cypress.config("baseUrl")}${path}`);
   }
 
   click(selector) {

@@ -7,7 +7,7 @@ describe("Criação de Conta no Automation Test Store", () => {
   const expect = new CreateAccountInvalidPasswordExpectations();
 
   it("Cadastro com senha inválida", () => {
-    cy.visit("https://automationteststore.com/");
+    cy.visit("/index.php?rt=account/create");
 
     service.clickLoginOrRegister();
     service.clickContinueBtnToRegister();
