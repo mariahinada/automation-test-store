@@ -1,15 +1,14 @@
-import { CreateAccountInvalidUserService } from "../../services/create-account/create-account-invalid-user-service";
+import { CreateAccountInvalidPasswordService } from "../../services/create-account/create-account-invalid-password.service";
 import { RandomDataHelper } from "../../helpers/random-data";
-import { CreateAccountInvalidUserExpectations } from "../../expectations/create-account/create-account-invalid-user-expectations";
+import { CreateAccountInvalidPasswordExpectations } from "../../expectations/create-account/create-account-invalid-password-expectations";
 
 describe("Criação de Conta no Automation Test Store", () => {
-  const service = new CreateAccountInvalidUserService();
-  const expect = new CreateAccountInvalidUserExpectations();
-  it("Cadastro com usuário inválido", () => {
-    // given
+  const service = new CreateAccountInvalidPasswordService();
+  const expect = new CreateAccountInvalidPasswordExpectations();
+
+  it("Cadastro com senha inválida", () => {
     cy.visit("https://automationteststore.com/");
 
-    // when
     service.clickLoginOrRegister();
     service.clickContinueBtnToRegister();
     service.fillFirstName("Nome");
@@ -24,14 +23,14 @@ describe("Criação de Conta no Automation Test Store", () => {
     service.selectCountry("Brazil");
     service.selectState("Sao Paulo");
     service.fillZipCode("00000-000");
-    service.fillLoginName("usu");
-    service.fillPassword("senha123");
-    service.fillConfirmPassword("senha123");
+    service.fillLoginName(RandomDataHelper.randomLogin());
+    service.fillPassword("sen");
+    service.fillConfirmPassword("sen");
     service.subscribeNewsLetter();
     service.acceptprivacyPolicy();
     service.clickContinueBtnToFinish();
 
     // then
-    expect.showInvalidUserAlert();
+    expect.showInvalidPasswordAlert();
   });
 });
