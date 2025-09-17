@@ -4,7 +4,7 @@ Projeto de automação de testes end-to-end (E2E) para o site Automation Test St
 
 ## Sobre o Projeto
 
-Este projeto realiza testes automatizados no site [Automation Test Store](https://automationteststore.com/), focando nos fluxos de criação de conta com cenários válidos e inválidos.
+Este projeto realiza testes automatizados no site https://automationteststore.com/, focando nos fluxos de criação de conta com cenários válidos e inválidos.
 
 ## Tecnologias Utilizadas
 
