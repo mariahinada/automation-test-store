@@ -36,4 +36,9 @@ export class AbstractService {
   getText(selector) {
     return cy.get(selector).invoke("text");
   }
+
+  clickChildByText(text) {
+    cy.contains(text)
+    .click({force: true});
+  }
 }
