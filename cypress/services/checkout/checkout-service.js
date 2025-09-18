@@ -8,17 +8,21 @@ export class CheckoutService extends AbstractService {
     password: "#loginFrm_password",
     continueBtnToLogin: "#loginFrm > fieldset > button",
     homeBtn: ":nth-child(1) > .active",
+
     // adicionar produto simples ao carrinho
     simpleProduct:
       "#block_frame_latest_1770 > div > div:nth-child(1) > div.thumbnail > div.pricetag.jumbotron > a > i",
     cartBtn: ".cart",
+
     // adicionar produto com variação ao carrinho
     variationProduct:
       "#block_frame_special_1772 > div > div:nth-child(2) > div.thumbnail > div.pricetag.jumbotron > a",
     variationOption: '[name="option[321]"]',
     addToCart:'button[title="Add to Cart"]',
+
     // finalizar compra com sucesso
-    confirmOrderBtn: "#checkout_btn",
+    checkoutBtn: "#checkout_btn",
+    confirmOrderBtn: "#cart_checkout1",
 
     // expectations
     showSimpleProductOnCart: "Absolute Anti-Age Spot Replenishing Unifying TreatmentSPF 15",
@@ -53,6 +57,10 @@ export class CheckoutService extends AbstractService {
 
   clickCartBtn() {
     this.click(this.elements.cartBtn);
+  }
+
+  clickcheckoutBtn() {
+    this.click(this.elements.checkoutBtn);
   }
 
   // adicionar produto com variação ao carrinho

@@ -21,15 +21,34 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     expect.showSimpleProductOnCart();
   });
 
-  afterEach(() => {
-    CartHelper.clearCart();
-    cy.log("Carrinho limpo");
-  });
-
   it("Adicionar produto com variação ao carrinho", () => {
     service.clickVariationProduct();
     service.selectVariationOption("664");
     service.clickCartBtn();
     expect.showVariationProductOnCart();
+  });
+
+  it.only("Finalizar compra com sucesso", () => {
+    service.clickVariationProduct();
+    service.selectVariationOption("664");
+    service.clickCartBtn();
+    expect.showVariationProductOnCart();
+    service.clickConfirmOrderBtn();
+    service.clickcheckoutBtn();
+    expect.showOrderProcessed();
+  });
+
+  afterEach(function () {
+    const clearTest = [
+      "Adicionar produto simples ao carrinho",
+      "Adicionar produto com variação ao carrinho",
+    ];
+
+    if (clearTest.includes(this.currentTest.title)) {
+      CartHelper.clearCart();
+      cy.log("Carrinho limpo");
+    } else {
+      cy.log("Não requer limpeza");
+    }
   });
 });

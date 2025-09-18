@@ -21,9 +21,9 @@ export class CheckoutExpectations extends AbstractExpectation {
         )
     }
 
-    orderProcessed() {
+    showOrderProcessed() {
         this.expectElementToHaveText(
-            "#maincontainer > div > div > div > h1 > span.maintext",
+            "span.maintext",
             "Your Order Has Been Processed!"
         )
     }
