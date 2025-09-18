@@ -8,8 +8,6 @@ describe("Fluxo de Compra no Automation Test Store", () => {
 
   beforeEach(() => {
     cy.visit("/");
-    cy.clearCookies();
-    cy.clearLocalStorage();
   });
 
   it("Adicionar produto simples ao carrinho", () => {
@@ -23,13 +21,14 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     expect.showSimpleProductOnCart();
   });
 
-  it.only("Adicionar produto com variação ao carrinho", () => {
+  it("Adicionar produto com variação ao carrinho", () => {
     service.clickLoginOrRegisterBtn();
     service.fillLoginName("usuario");
     service.fillPassword("senha123");
     service.clickContinueBtnToLogin();
     service.clickHomeBtn();
     service.clickVariationProduct();
+    service.selectVariationOption('664');
     service.clickCartBtn();
     expect.showVariationProductOnCart();
   });

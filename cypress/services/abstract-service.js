@@ -9,7 +9,7 @@ export class AbstractService {
 
   click(selector) {
     if (!selector) throw new Error("Nenhum seletor informado para click");
-    cy.get(selector).click();
+    cy.get(selector).click({force : true});
   }
 
   type(selector, value) {
@@ -25,7 +25,9 @@ export class AbstractService {
       throw new Error(
         `Nenhum valor passado para o select no elemento: ${selector}`
       );
-    cy.get(selector).select(option);
+    cy.get(selector)
+    .should('be.visible')
+    .select(option);
   }
 
   check(selector) {
@@ -38,7 +40,6 @@ export class AbstractService {
   }
 
   clickChildByText(text) {
-    cy.contains(text)
-    .click({force: true});
+    cy.contains(text).click({ force: true });
   }
 }

@@ -14,4 +14,8 @@ export class AbstractExpectation {
   expectElementToHaveClass(selector, className) {
     cy.get(selector).should("have.class", className);
   }
+
+  expectElementByText(elementType, text) {
+    cy.contains(elementType, text).should("exist")
+  }
 }

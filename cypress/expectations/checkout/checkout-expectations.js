@@ -9,8 +9,7 @@ export class CheckoutExpectations extends AbstractExpectation {
     }
 
     showVariationProductOnCart() {
-        this.expectElementToHaveText(
-            "#cart > div > div.container-fluid.cart-info.product-list > table > tbody > tr:nth-child(2) > td:nth-child(2) > a",
+        this.expectElementByText(
             "Acqua Di Gio Pour Homme"
         )
     }
