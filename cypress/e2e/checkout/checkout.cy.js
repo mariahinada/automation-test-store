@@ -5,6 +5,13 @@ import { CartHelper } from "../../helpers/cart-helper";
 describe("Fluxo de Compra no Automation Test Store", () => {
   const service = new CheckoutService();
   const expect = new CheckoutExpectations();
+  let products; // variável para armazenar os dados dos produtos
+
+  before(() => { // carrega fixture antes de todos os testes
+    cy.fixture("products").then((data) => {
+      products = data; // atribui os dados do fixture à variável products
+    });
+  })
 
   beforeEach(() => {
     cy.visit("/");
@@ -15,26 +22,26 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     service.clickHomeBtn();
   });
 
-  it("Adicionar produto simples ao carrinho", () => {
-    service.clickSimpleProduct();
+  it.only("Adicionar produto simples ao carrinho", () => {
+    service.clickSimpleProduct(products.simpleProduct);
     service.clickCartBtn();
-    expect.showSimpleProductOnCart();
+    expect.showSimpleProductOnCart(products.simpleProduct);
   });
 
   it("Adicionar produto com variação ao carrinho", () => {
-    service.clickVariationProduct();
+    service.clickVariationProduct(products.variationProduct);
     service.selectVariationOption("664");
     service.clickCartBtn();
-    expect.showVariationProductOnCart();
+    expect.showVariationProductOnCart(products.variationProduct);
   });
 
-  it.only("Finalizar compra com sucesso", () => {
-    service.clickVariationProduct();
+  it("Finalizar compra com sucesso", () => {
+    service.clickVariationProduct(products.variationProduct);
     service.selectVariationOption("664");
     service.clickCartBtn();
-    expect.showVariationProductOnCart();
+    expect.showVariationProductOnCart(products.variationProduct);
     service.clickConfirmOrderBtn();
-    service.clickcheckoutBtn();
+    service.clickCheckoutBtn();
     expect.showOrderProcessed();
   });
 

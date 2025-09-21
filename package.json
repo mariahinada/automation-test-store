@@ -1,7 +1,6 @@
 {
   "name": "automation-test-store",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/mariahinada/automation-test-store/issues"
   },
-  "homepage": "https://github.com/mariahinada/automation-test-store#readme"
+  "homepage": "https://github.com/mariahinada/automation-test-store#readme",
+  "description": ""
 }
