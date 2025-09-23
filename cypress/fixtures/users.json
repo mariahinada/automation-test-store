@@ -1,0 +1,16 @@
+{
+    "validUser": {
+        "login": "usuario",
+        "senha": "senha123"
+    },
+
+    "invalidUser": {
+        "login": "usu",
+        "senha": "senha123"
+    },
+
+    "invalidPassword": {
+        "login": "usuario",
+        "senha": "sen"
+    }
+}
