@@ -22,7 +22,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     service.clickHomeBtn();
   });
 
-  it.only("Adicionar produto simples ao carrinho", () => {
+  it("Adicionar produto simples ao carrinho", () => {
     service.clickSimpleProduct(products.simpleProduct);
     service.clickCartBtn();
     expect.showSimpleProductOnCart(products.simpleProduct);
