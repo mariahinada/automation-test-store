@@ -1,17 +1,11 @@
 import { CheckoutService } from "../../services/checkout/checkout-service";
 import { CheckoutExpectations } from "../../expectations/checkout/checkout-expectations";
 import { CartHelper } from "../../helpers/cart-helper";
+import products from "../../fixtures/products.json";
 
 describe("Fluxo de Compra no Automation Test Store", () => {
   const service = new CheckoutService();
   const expect = new CheckoutExpectations();
-  let products; // variável para armazenar os dados dos produtos
-
-  before(() => { // carrega fixture antes de todos os testes
-    cy.fixture("products").then((data) => {
-      products = data; // atribui os dados do fixture à variável products
-    });
-  })
 
   beforeEach(() => {
     cy.visit("/");
