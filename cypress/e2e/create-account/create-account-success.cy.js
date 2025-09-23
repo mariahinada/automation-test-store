@@ -4,7 +4,7 @@ import { CreateAccountSuccessExpectations } from "../../expectations/create-acco
 
 describe("Cadastro válido", () => {
   const service = new CreateAccountSuccessService();
-  const expect = new CreateAccountSuccessExpectations();
+  const expectation = new CreateAccountSuccessExpectations();
 
   it("Cadastro com usuário válido", () => {
     // given
@@ -33,6 +33,6 @@ describe("Cadastro válido", () => {
     service.clickContinueBtnToFinish();
 
     // then
-    expect.showSuccessMessage();
+    expectation.showSuccessMessage();
   });
 });

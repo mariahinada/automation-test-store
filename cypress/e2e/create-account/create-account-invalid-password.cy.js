@@ -4,11 +4,13 @@ import { CreateAccountInvalidPasswordExpectations } from "../../expectations/cre
 
 describe("Criação de Conta no Automation Test Store", () => {
   const service = new CreateAccountInvalidPasswordService();
-  const expect = new CreateAccountInvalidPasswordExpectations();
+  const expectation = new CreateAccountInvalidPasswordExpectations();
 
   it("Cadastro com senha inválida", () => {
+    // given
     cy.visit("/index.php?rt=account/create");
 
+    // when
     service.clickLoginOrRegister();
     service.clickContinueBtnToRegister();
     service.fillFirstName("Nome");
@@ -31,6 +33,6 @@ describe("Criação de Conta no Automation Test Store", () => {
     service.clickContinueBtnToFinish();
 
     // then
-    expect.showInvalidPasswordAlert();
+    expectation.showInvalidPasswordAlert();
   });
 });

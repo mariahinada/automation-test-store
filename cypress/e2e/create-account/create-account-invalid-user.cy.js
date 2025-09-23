@@ -4,7 +4,7 @@ import { CreateAccountInvalidUserExpectations } from "../../expectations/create-
 
 describe("Criação de Conta no Automation Test Store", () => {
   const service = new CreateAccountInvalidUserService();
-  const expect = new CreateAccountInvalidUserExpectations();
+  const expectation = new CreateAccountInvalidUserExpectations();
   it("Cadastro com usuário inválido", () => {
     // given
     cy.visit("/index.php?rt=account/create");
@@ -32,6 +32,6 @@ describe("Criação de Conta no Automation Test Store", () => {
     service.clickContinueBtnToFinish();
 
     // then
-    expect.showInvalidUserAlert();
+    expectation.showInvalidUserAlert();
   });
 });

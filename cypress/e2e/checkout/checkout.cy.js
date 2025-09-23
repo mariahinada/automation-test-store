@@ -5,7 +5,7 @@ import products from "../../fixtures/products.json";
 
 describe("Fluxo de Compra no Automation Test Store", () => {
   const service = new CheckoutService();
-  const expect = new CheckoutExpectations();
+  const expectation = new CheckoutExpectations();
 
   beforeEach(() => {
     cy.visit("/");
@@ -19,14 +19,14 @@ describe("Fluxo de Compra no Automation Test Store", () => {
   it("Adicionar produto simples ao carrinho", () => {
     service.clickSimpleProduct(products.simpleProduct);
     service.clickCartBtn();
-    expect.showSimpleProductOnCart(products.simpleProduct);
+    expectation.showSimpleProductOnCart(products.simpleProduct);
   });
 
   it("Adicionar produto com variação ao carrinho", () => {
     service.clickVariationProduct(products.variationProduct);
     service.selectVariationOption("664");
     service.clickCartBtn();
-    expect.showVariationProductOnCart(products.variationProduct);
+    expectation.showVariationProductOnCart(products.variationProduct);
   });
 
   it("Finalizar compra com sucesso", () => {
@@ -36,7 +36,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     expect.showVariationProductOnCart(products.variationProduct);
     service.clickConfirmOrderBtn();
     service.clickCheckoutBtn();
-    expect.showOrderProcessed();
+    expectation.showOrderProcessed();
   });
 
   afterEach(function () {
