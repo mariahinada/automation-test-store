@@ -20,25 +20,27 @@ jobs:
           node-version: 18
 
       - name: Instalar dependências do sistema (necessárias pro Electron/Chrome)
-        run: sudo apt-get update && sudo apt-get install -y \
-          libgtk-3-0 \
-          libgtk-3-bin \
-          libnotify4 \
-          libnss3 \
-          libxss1 \
-          libasound2 \
-          libgbm1 \
-          xvfb \
-          xauth \
-          fonts-liberation \
-          libdrm2 \
-          libatk-bridge2.0-0 \
-          libatk1.0-0 \
-          libpangocairo-1.0-0 \
-          libxcomposite1 \
-          libxcursor1 \
-          libxi6 \
-          libxtst6
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            libgtk-3-0 \
+            libgtk-3-bin \
+            libnotify4 \
+            libnss3 \
+            libxss1 \
+            libasound2 \
+            libgbm1 \
+            xvfb \
+            xauth \
+            fonts-liberation \
+            libdrm2 \
+            libatk-bridge2.0-0 \
+            libatk1.0-0 \
+            libpangocairo-1.0-0 \
+            libxcomposite1 \
+            libxcursor1 \
+            libxi6 \
+            libxtst6
 
       - name: Instalar dependências do projeto
         run: npm ci
