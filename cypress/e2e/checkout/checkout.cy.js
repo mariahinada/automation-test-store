@@ -33,7 +33,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     service.clickVariationProduct(products.variationProduct);
     service.selectVariationOption("664");
     service.clickCartBtn();
-    expect.showVariationProductOnCart(products.variationProduct);
+    expectation.showVariationProductOnCart(products.variationProduct);
     service.clickConfirmOrderBtn();
     service.clickCheckoutBtn();
     expectation.showOrderProcessed();

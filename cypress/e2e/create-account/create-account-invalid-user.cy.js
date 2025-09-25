@@ -1,5 +1,5 @@
 import { CreateAccountInvalidUserService } from "../../services/create-account/create-account-invalid-user-service";
-import { RandomDataHelper } from "../../helpers/random-data";
+import { RandomDataHelper } from "../../helpers/random-data-helper";
 import { CreateAccountInvalidUserExpectations } from "../../expectations/create-account/create-account-invalid-user-expectations";
 
 describe("Criação de Conta no Automation Test Store", () => {

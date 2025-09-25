@@ -1,5 +1,5 @@
 import { CreateAccountSuccessService } from "../../services/create-account/create-account-success-service";
-import { RandomDataHelper } from "../../helpers/randomData";
+import { RandomDataHelper } from "../../helpers/random-data-helper";
 import { CreateAccountSuccessExpectations } from "../../expectations/create-account/create-account-success-expectations";
 
 describe("Cadastro válido", () => {
