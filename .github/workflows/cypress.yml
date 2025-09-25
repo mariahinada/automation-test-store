@@ -11,22 +11,34 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
+      - name: Checkout 
         uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18.19.0
+          node-version: 18
 
-      - name: Instalar dependências do sistema (Electron)
+      - name: Instalar dependências do sistema (necessárias pro Electron/Chrome)
         run: sudo apt-get update && sudo apt-get install -y \
           libgtk-3-0 \
+          libgtk-3-bin \
           libnotify4 \
           libnss3 \
           libxss1 \
           libasound2 \
-          xvfb
+          libgbm1 \
+          xvfb \
+          xauth \
+          fonts-liberation \
+          libdrm2 \
+          libatk-bridge2.0-0 \
+          libatk1.0-0 \
+          libpangocairo-1.0-0 \
+          libxcomposite1 \
+          libxcursor1 \
+          libxi6 \
+          libxtst6
 
       - name: Instalar dependências do projeto
         run: npm ci
@@ -34,7 +46,7 @@ jobs:
       - name: Rodar testes Cypress
         run: npx cypress run --headless --browser electron
 
-      - name: Upload artifacts (screenshots e vídeos)
+      - name: Upload artifacts (screenshots, vídeos e reports)
         if: always()
         uses: actions/upload-artifact@v4
         with:
@@ -42,3 +54,4 @@ jobs:
           path: |
             cypress/screenshots
             cypress/videos
+            cypress/reports
