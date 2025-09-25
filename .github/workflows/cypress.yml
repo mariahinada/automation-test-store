@@ -23,7 +23,7 @@ jobs:
         run: npm ci
 
       - name: Run Cypress Tests
-        run: npx cypress run --headless --browser electron
+        run: npx cypress run --headless --browser electron --no-sandbox
 
       - name: Upload artifacts (screenshots and videos)
         if: always()
