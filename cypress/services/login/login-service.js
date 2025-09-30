@@ -1,5 +1,4 @@
 import { AbstractService } from "../abstract-service";
-import users from "../../fixtures/users.json";
 
 export class LoginService extends AbstractService {
   elements = {
