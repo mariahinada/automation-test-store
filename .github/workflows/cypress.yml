@@ -49,6 +49,9 @@ jobs:
       - name: Instalar dependências do projeto
         run: npm ci
 
+      - name: Checar formatação (Prettier)
+        run: npm run check:format
+
       - name: Rodar testes Cypress
         run: npx cypress run --headless --browser electron
 
