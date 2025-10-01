@@ -12,5 +12,17 @@
     "invalidPassword": {
         "login": "usuario",
         "password": "sen"
+    },
+
+    "validRecovery": {
+        "login": "usuario",
+        "email": "usuario@exemplo.com",
+        "lastName": "Sobrenome"
+    },
+
+    "invalidRecovery": {
+        "login": "usu",
+        "email": "usuario.exemplo.com",
+        "lastName": "So"
     }
 }
