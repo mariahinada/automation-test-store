@@ -4,7 +4,7 @@ Feature: Recuperação de Credenciais no Automation Test Store
         Given Que estou na página inicial
         When Clico no botão "Login or Register"
 
-    Scenario: Recuperar senha
+    Scenario: Recuperar senha com sucesso
         And Clico no botão "Forgot your password?"
         And Preencho o campo "Login Name", com "usuario"
         And Preencho o campo "E-mail", com "usuario@exemplo.com"
