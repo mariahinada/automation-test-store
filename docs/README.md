@@ -1,29 +1,36 @@
 # Automation Test Store - Projeto de Testes E2E
 
-Projeto de automação de testes end-to-end (E2E) para o site Automation Test Store, implementado com Cypress
+Projeto de automação de testes end-to-end (E2E) para o site Automation Test Store, implementado com Cypress.
 
 ## Sobre o Projeto
 
-Este projeto realiza testes automatizados no site https://automationteststore.com/, focando nos fluxos de criação de conta e compra, cobrindo cenários válidos e inválidos.
+Este projeto realiza testes automatizados no site [Automation Test Store](https://automationteststore.com/), cobrindo fluxos de criação de conta, login, compra e recuperação de credenciais, com cenários positivos e negativos.
 
 ## Tecnologias Utilizadas
 
 - **Cypress** (v15.2.0)
 - **JavaScript**
+- **GitHub Actions** (CI/CD)
 
 ## Estrutura do Projeto
 
 ```
 cypress/
   e2e/
+    login/
+      login.cy.js
     checkout/
       checkout.cy.js
     create-account/
       create-account-success.cy.js
       create-account-invalid-user.cy.js
       create-account-invalid-password.cy.js
+    forgot-credentials/
+      forgot-credentials.cy.js
   expectations/
     abstract-expectations.js
+    login/
+      login-expectations.js
     checkout/
       checkout-expectations.js
     create-account/
@@ -31,18 +38,23 @@ cypress/
       create-account-invalid-user-expectations.js
       create-account-invalid-password-expectations.js
   fixtures/
-    example.json
+    products.json
+    users.json
   helpers/
     cart-helper.js
     random-data-helper.js
   services/
     abstract-service.js
+    login/
+      login-service.js
     checkout/
       checkout-service.js
     create-account/
       create-account-success-service.js
       create-account-invalid-user-service.js
       create-account-invalid-password.service.js
+    forgot-credentials/
+      forgot-credentials-service.js
   support/
     commands.js
     e2e.js
@@ -51,62 +63,80 @@ docs/
   gherkin/
     checkout.feature
     create-account.feature
+    forgot-credentials.feature
+    login.feature
+.github/
+  workflows/
+    ci.yml
 ```
 
 ## Cenários de Teste Implementados
 
 ### 1. Cadastro Válido
 - **Arquivo:** `create-account-success.cy.js`
-- **Descrição:** Testa o fluxo completo de criação de conta com dados válidos
-- **Validação:** Confirmação de conta criada com sucesso
+- **Descrição:** Testa o fluxo completo de criação de conta com dados válidos.
+- **Validação:** Confirmação de conta criada com sucesso.
 
 ### 2. Cadastro com Usuário Inválido
 - **Arquivo:** `create-account-invalid-user.cy.js`
-- **Descrição:** Testa o fluxo com nome de usuário inválido (menos de 5 caracteres)
-- **Validação:** Mensagem de erro apropriada é exibida
+- **Descrição:** Testa o fluxo com nome de usuário inválido (menos de 5 caracteres).
+- **Validação:** Mensagem de erro apropriada é exibida.
 
 ### 3. Cadastro com Senha Inválida
 - **Arquivo:** `create-account-invalid-password.cy.js`
-- **Descrição:** Testa o fluxo com senha inválida (menos de 4 caracteres)
-- **Validação:** Mensagem de erro apropriada é exibida
+- **Descrição:** Testa o fluxo com senha inválida (menos de 4 caracteres).
+- **Validação:** Mensagem de erro apropriada é exibida.
 
-### 4. Fluxo de Compra (Checkout)
+### 4. Login
+- **Arquivo:** `login.cy.js`
+- **Descrição:** Testa o fluxo de login com credenciais válidas e inválidas.
+- **Validação:** Mensagens de sucesso e erro apropriadas.
+
+### 5. Fluxo de Compra (Checkout)
 - **Arquivo:** `checkout.cy.js`
 - **Descrição:** Testa os principais fluxos de compra, incluindo:
   - Adição de produto simples ao carrinho
   - Adição de produto com variação ao carrinho
   - Remoção de produto do carrinho
   - Finalização de compra com sucesso
-- **Validação:** Mensagens de sucesso e estados do carrinho
+- **Validação:** Mensagens de sucesso e estados do carrinho.
+
+### 6. Recuperação de Credenciais (Forgot Credentials)
+- **Arquivo:** `forgot-credentials.cy.js`
+- **Descrição:** Testa o fluxo de recuperação de senha, incluindo:
+  - Recuperação bem-sucedida com e-mail válido
+  - Tentativa com e-mail inválido
+  - Tentativa com usuário inexistente
+- **Validação:** Mensagens de sucesso e erro apropriadas.
 
 ## Padrões de Desenvolvimento
 
 ### Service Layer
 Classes que encapsulam as interações com a página:
-- [`AbstractService`](cypress/services/abstract-service.js) - Classe base com métodos genéricos
-- [`CreateAccountSuccessService`](cypress/services/create-account/create-account-success-service.js) - Serviço para cenários de sucesso
-- [`CreateAccountInvalidUserService`](cypress/services/create-account/create-account-invalid-user-service.js) - Serviço para cenários de erro de usuário
-- [`CreateAccountInvalidPasswordService`](cypress/services/create-account/create-account-invalid-password.service.js) - Serviço para cenários de erro de senha
-- [`CheckoutService`](cypress/services/checkout/checkout-service.js) - Serviço para fluxo de compra
+- `AbstractService` - Classe base com métodos genéricos
+- Serviços específicos para cada fluxo (cadastro, login, checkout, recuperação de credenciais)
 
 ### Expectations Layer
 Classes para validações e assertions:
-- [`AbstractExpectation`](cypress/expectations/abstract-expectations.js) - Classe base com métodos genéricos
-- [`CreateAccountSuccessExpectations`](cypress/expectations/create-account/create-account-success-expectations.js) - Expectativas para sucesso
-- [`CreateAccountInvalidUserExpectations`](cypress/expectations/create-account/create-account-invalid-user-expectations.js) - Expectativas para erro de usuário
-- [`CreateAccountInvalidPasswordExpectations`](cypress/expectations/create-account/create-account-invalid-password-expectations.js) - Expectativas para erro de senha
-- [`CheckoutExpectations`](cypress/expectations/checkout/checkout-expectations.js) - Expectativas para fluxo de compra
+- `AbstractExpectation` - Classe base com métodos genéricos
+- Expectations específicas para cada fluxo implementado
 
 ### Helpers
-- [`RandomDataHelper`](cypress/helpers/random-data-helper.js) - Geração de dados aleatórios (email e usuário)
-- [`CartHelper`](cypress/helpers/cart-helper.js) - Limpeza de carrinho após testes
+- `RandomDataHelper` - Geração de dados aleatórios (email e usuário)
+- `CartHelper` - Limpeza de carrinho após testes
 
 ### Fixtures
-- [`example.json`](cypress/fixtures/example.json) - Exemplo de dados mockados para testes
+- `products.json`, `users.json`, `example.json` - Dados mockados para testes
 
 ### Gherkin Features
-- [`create-account.feature`](docs/gherkin/create-account.feature) - Especificação dos cenários de cadastro
-- [`checkout.feature`](docs/gherkin/checkout.feature) - Especificação dos cenários de compra
+- Especificação dos cenários em `.feature` para rastreabilidade e documentação
+
+## Integração Contínua (CI/CD)
+
+- **Ferramenta:** GitHub Actions
+- **Arquivo de workflow:** `.github/workflows/ci.yml`
+- **Comando executado:** `npx cypress run`
+- Os testes são executados automaticamente a cada push ou pull request.
 
 ## Configuração do Ambiente
 
@@ -125,7 +155,7 @@ git clone https://github.com/mariahinada/automation-test-store.git
 npm install
 ```
 
-3. Execute os testes:
+3. Execute os testes localmente:
 ```bash
 npx cypress open
 ```
@@ -137,3 +167,5 @@ npx cypress run
 ## Contribuição
 
 Sinta-se à vontade para abrir issues ou pull requests para melhorias e novos cenários de teste.
+
+---
