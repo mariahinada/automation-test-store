@@ -167,5 +167,3 @@ npx cypress run
 ## Contribuição
 
 Sinta-se à vontade para abrir issues ou pull requests para melhorias e novos cenários de teste.
-
----

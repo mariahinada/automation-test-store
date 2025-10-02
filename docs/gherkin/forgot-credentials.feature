@@ -1,4 +1,4 @@
-Feature: Esqueci o Login no Automation Test Store
+Feature: Recuperação de Credenciais no Automation Test Store
 
     Background:
         Given Que estou na página inicial
