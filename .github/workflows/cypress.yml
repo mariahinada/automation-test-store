@@ -50,7 +50,7 @@ jobs:
         run: npm ci
 
       - name: Checar formatação (Prettier)
-        run: npm run format
+        run: npx prettier --write .
 
       - name: Rodar testes Cypress
         run: npx cypress run --headless --browser electron
