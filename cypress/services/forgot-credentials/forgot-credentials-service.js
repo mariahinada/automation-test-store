@@ -11,7 +11,7 @@ export class ForgotCredentialsService extends AbstractService {
     email: "#forgottenFrm_email",
 
     // formulário de recuperação de login
-    forgotLoginBtn: "a:contains('Forgot your login name')",
+    forgotLoginBtn: "a:contains('Forgot your login')",
     lastName: "#forgottenFrm_lastname",
 
     // botão de submit

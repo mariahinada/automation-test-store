@@ -25,7 +25,7 @@ Feature: Recuperação de Credenciais no Automation Test Store
         And Clico no botão "Continue"
         Then Vejo o alerta "Error: No records found matching information your provided, please check your information and try again!"
 
-    Scenario: Recuperar usuário
+    Scenario: Recuperar usuário com sucesso
         And Clico no botão "Forgot your login name?"
         And Preencho o campo "Last Name", com "Sobrenome"
         And Preencho o campo "E-mail", com "usuario@exemplo.com"
