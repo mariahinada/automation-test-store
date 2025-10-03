@@ -1,7 +1,6 @@
 // navega para a página de login, registro (e recuperação de senha)
 Cypress.Commands.add("navigateToLoginAndRegister", () => {
-  cy.visit("/");
-  cy.get("#customer_menu_top").contains("Login or register").click();
+  cy.visit("/index.php?rt=account/login");
 });
 
 // navega para a página de criação de conta
