@@ -8,8 +8,7 @@ describe("Fluxo de Login no Automation Test Store", () => {
   const expectation = new LoginExpectations();
 
   beforeEach(() => {
-    cy.visit("/");
-    service.clickLoginOrRegisterBtn();
+    cy.navigateToLoginAndRegister();
   });
 
   it("Login com sucesso", () => {

@@ -8,12 +8,8 @@ describe("Fluxo de Compra no Automation Test Store", () => {
   const expectation = new CheckoutExpectations();
 
   beforeEach(() => {
-    cy.visit("/");
-    service.clickLoginOrRegisterBtn();
-    service.fillLoginName("usuario");
-    service.fillPassword("senha123");
-    service.clickContinueBtnToLogin();
-    service.clickHomeBtn();
+    cy.navigateToLogin();
+    cy.loginAndHomeAccess();
   });
 
   it("Adicionar produto simples ao carrinho", () => {
