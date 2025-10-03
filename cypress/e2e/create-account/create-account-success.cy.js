@@ -8,11 +8,9 @@ describe("Cadastro válido", () => {
 
   it("Cadastro com usuário válido", () => {
     // given
-    cy.visit("/index.php?rt=account/create");
+    cy.navigateToCreateAccount();
 
     // when
-    service.clickLoginOrRegister();
-    service.clickContinueBtnToRegister();
     service.fillFirstName("Nome");
     service.fillLastName("Sobrenome");
     service.fillEmail(RandomDataHelper.randomEmail());
