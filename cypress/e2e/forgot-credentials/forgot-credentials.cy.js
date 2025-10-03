@@ -6,8 +6,7 @@ describe('Recuperação de Credenciais no Automation Test Store', () => {
     const expectation = new ForgotCredentialsExpectations();
 
     beforeEach(() => {
-        cy.visit("/");
-        service.clickLoginOrRegisterBtn();
+        cy.navigateToLoginAndRegister();
     });
 
     it("Recuperar senha com sucesso", () => {
