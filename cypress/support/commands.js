@@ -36,7 +36,7 @@ Cypress.Commands.add("clearCart", () => {
   });
 
   // navega para a página de criação de conta
-  Cypress.Commands.add("navigateToCreateAccountPage", () => {
+  Cypress.Commands.add("navigateToCreateAccount", () => {
     cy.visit("/index.php?rt=account/create");
   });
 });
