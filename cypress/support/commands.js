@@ -34,9 +34,9 @@ Cypress.Commands.add("clearCart", () => {
       cy.log("Carrinho limpo");
     }
   });
-});
 
-// navega para a página de criação de conta
-Cypress.Commands.add("navigateToCreateAccountPage", () => {
-  cy.visit("/index.php?rt=account/create");
+  // navega para a página de criação de conta
+  Cypress.Commands.add("navigateToCreateAccountPage", () => {
+    cy.visit("/index.php?rt=account/create");
+  });
 });
