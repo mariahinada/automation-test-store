@@ -2,7 +2,7 @@ const VALID_USERNAME = "usuario";
 const VALID_PASSWORD = "senha123";
 
 // navega para a página de login
-Cypress.Commands.add("navigateToLoginPage", () => {
+Cypress.Commands.add("navigateToLoginAndRegister", () => {
   cy.visit("/index.php?rt=account/login");
 });
 
