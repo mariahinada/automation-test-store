@@ -1,6 +1,5 @@
 import { CheckoutService } from "../../services/checkout/checkout-service";
 import { CheckoutExpectations } from "../../expectations/checkout/checkout-expectations";
-import { CartHelper } from "../../helpers/cart-helper";
 import products from "../../fixtures/products.json";
 
 describe("Fluxo de Compra no Automation Test Store", () => {
@@ -24,7 +23,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     expectation.showVariationProductOnCart(products.variationProduct);
   });
 
-  it("Finalizar compra com sucesso", () => {
+  it.only("Finalizar compra com sucesso", () => {
     service.clickVariationProduct(products.variationProduct);
     service.selectVariationOption("664");
     service.clickCartBtn();
@@ -34,17 +33,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     expectation.showOrderProcessed();
   });
 
-  afterEach(function () {
-    const clearTest = [
-      "Adicionar produto simples ao carrinho",
-      "Adicionar produto com variação ao carrinho",
-    ];
-
-    if (clearTest.includes(this.currentTest.title)) {
-      CartHelper.clearCart();
-      cy.log("Carrinho limpo");
-    } else {
-      cy.log("Não requer limpeza");
-    }
+  afterEach(() => {
+    cy.clearCart();
   });
 });
