@@ -1,28 +1,28 @@
 {
-    "validUser": {
-        "login": "usuario",
-        "password": "senha123"
-    },
+  "validUser": {
+    "login": "usuario",
+    "password": "senha123"
+  },
 
-    "invalidUser": {
-        "login": "usu",
-        "password": "senha123"
-    },
+  "invalidUser": {
+    "login": "usu",
+    "password": "senha123"
+  },
 
-    "invalidPassword": {
-        "login": "usuario",
-        "password": "sen"
-    },
+  "invalidPassword": {
+    "login": "usuario",
+    "password": "sen"
+  },
 
-    "validRecovery": {
-        "login": "usuario",
-        "email": "usuario@exemplo.com",
-        "lastName": "Sobrenome"
-    },
+  "validRecovery": {
+    "login": "usuario",
+    "email": "usuario@exemplo.com",
+    "lastName": "Sobrenome"
+  },
 
-    "invalidRecovery": {
-        "login": "usu",
-        "email": "usuario.exemplo.com",
-        "lastName": "So"
-    }
+  "invalidRecovery": {
+    "login": "usu",
+    "email": "usuario.exemplo.com",
+    "lastName": "So"
+  }
 }

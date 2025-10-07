@@ -4,7 +4,7 @@ export class CreateAccountInvalidUserExpectations extends AbstractExpectation {
   showInvalidUserAlert() {
     this.expectElementToHaveText(
       ".alert",
-      "Login name must be alphanumeric only and between 5 and 64 characters!"
+      "Login name must be alphanumeric only and between 5 and 64 characters!",
     );
   }
 }

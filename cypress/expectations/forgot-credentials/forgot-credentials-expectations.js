@@ -4,7 +4,7 @@ export class ForgotCredentialsExpectations extends AbstractExpectation {
   showSuccessMessageForForgotPassword() {
     this.expectElementToHaveText(
       "div.alert.alert-success",
-      "Success: Password reset link has been sent to your e-mail address."
+      "Success: Password reset link has been sent to your e-mail address.",
     );
   }
 
@@ -12,7 +12,7 @@ export class ForgotCredentialsExpectations extends AbstractExpectation {
   showSucessMessageForForgotLogin() {
     this.expectElementToHaveText(
       "div.alert.alert-success",
-      "Success: Your login name reminder has been sent to your e-mail address."
+      "Success: Your login name reminder has been sent to your e-mail address.",
     );
   }
 
@@ -20,7 +20,7 @@ export class ForgotCredentialsExpectations extends AbstractExpectation {
   showFailureMessage() {
     this.expectElementToHaveText(
       "div.alert.alert-error.alert-danger",
-      "Error: No records found matching information your provided, please check your information and try again!"
+      "Error: No records found matching information your provided, please check your information and try again!",
     );
   }
 }

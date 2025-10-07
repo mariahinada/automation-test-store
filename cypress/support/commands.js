@@ -29,7 +29,7 @@ Cypress.Commands.add("clearCart", () => {
     } else {
       cy.get(".contentpanel").should(
         "contain.text",
-        "Your shopping cart is empty"
+        "Your shopping cart is empty",
       );
       cy.log("Carrinho limpo");
     }

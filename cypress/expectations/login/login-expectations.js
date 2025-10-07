@@ -1,12 +1,11 @@
 import { AbstractExpectation } from "../abstract-expectations";
 export class LoginExpectations extends AbstractExpectation {
-    
   // login com sucesso
   showUserLoggedIn(loginName) {
     if (!loginName)
       throw new Error("showUserLoggedIn: loginName não fornecido");
     this.expectUrlToBe(
-      "https://automationteststore.com/index.php?rt=account/account"
+      "https://automationteststore.com/index.php?rt=account/account",
     );
   }
 
@@ -14,7 +13,7 @@ export class LoginExpectations extends AbstractExpectation {
   showInvalidLoginOrPassword() {
     this.expectElementToHaveText(
       "#maincontainer > div > div > div > div.alert.alert-error.alert-danger",
-      "Error: Incorrect login or password provided."
+      "Error: Incorrect login or password provided.",
     );
   }
 }

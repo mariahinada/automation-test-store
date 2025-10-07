@@ -3,7 +3,7 @@ name: Cypress Tests
 on:
   push:
     branches: ["main"]
-    paths: 
+    paths:
       - ".github/workflows/cypress.yml"
       - "cypress/**"
   pull_request:
@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout 
+      - name: Checkout
         uses: actions/checkout@v4
 
       - name: Setup Node.js

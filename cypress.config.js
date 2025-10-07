@@ -1,7 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  video: true, 
+  video: true,
   e2e: {
     baseUrl: "https://automationteststore.com/",
     viewportWidth: 1920,

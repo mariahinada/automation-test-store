@@ -4,11 +4,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "check:format": "prettier --check .",
-    "format": "prettier --write ."
+    "check:format": "npx prettier --check .",
+    "format": "npx prettier --write ."
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "testes",
+    "cypress",
+    "e2e"
+  ],
+  "author": "Mariah Inada",
   "license": "ISC",
   "devDependencies": {
     "cypress": "^15.2.0"
@@ -24,5 +28,5 @@
     "url": "https://github.com/mariahinada/automation-test-store/issues"
   },
   "homepage": "https://github.com/mariahinada/automation-test-store#readme",
-  "description": ""
+  "description": "Projeto de automação de testes E2E para Automation Test Store usando Cypress."
 }

@@ -4,7 +4,7 @@ export class CreateAccountInvalidPasswordExpectations extends AbstractExpectatio
   showInvalidPasswordAlert() {
     this.expectElementToHaveText(
       ".alert",
-      "Password must be between 4 and 20 characters!"
+      "Password must be between 4 and 20 characters!",
     );
   }
 }

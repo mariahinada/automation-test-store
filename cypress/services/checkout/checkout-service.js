@@ -7,7 +7,7 @@ export class CheckoutService extends AbstractService {
     loginName: "#loginFrm_loginname",
     password: "#loginFrm_password",
     continueBtnToLogin: "#loginFrm > fieldset > button",
-    homeBtn: ":nth-child(1) > .active", 
+    homeBtn: ":nth-child(1) > .active",
 
     // carrinho e checkout
     cartBtn: ".cart",
@@ -16,7 +16,7 @@ export class CheckoutService extends AbstractService {
 
     // variações
     variationOption: '[name="option[321]"]',
-    addToCart:'button[title="Add to Cart"]'
+    addToCart: 'button[title="Add to Cart"]',
   };
 
   // background

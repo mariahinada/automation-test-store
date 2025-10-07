@@ -73,26 +73,31 @@ docs/
 ## Cenários de Teste Implementados
 
 ### 1. Cadastro Válido
+
 - **Arquivo:** `create-account-success.cy.js`
 - **Descrição:** Testa o fluxo completo de criação de conta com dados válidos.
 - **Validação:** Confirmação de conta criada com sucesso.
 
 ### 2. Cadastro com Usuário Inválido
+
 - **Arquivo:** `create-account-invalid-user.cy.js`
 - **Descrição:** Testa o fluxo com nome de usuário inválido (menos de 5 caracteres).
 - **Validação:** Mensagem de erro apropriada é exibida.
 
 ### 3. Cadastro com Senha Inválida
+
 - **Arquivo:** `create-account-invalid-password.cy.js`
 - **Descrição:** Testa o fluxo com senha inválida (menos de 4 caracteres).
 - **Validação:** Mensagem de erro apropriada é exibida.
 
 ### 4. Login
+
 - **Arquivo:** `login.cy.js`
 - **Descrição:** Testa o fluxo de login com credenciais válidas e inválidas.
 - **Validação:** Mensagens de sucesso e erro apropriadas.
 
 ### 5. Fluxo de Compra (Checkout)
+
 - **Arquivo:** `checkout.cy.js`
 - **Descrição:** Testa os principais fluxos de compra, incluindo:
   - Adição de produto simples ao carrinho
@@ -102,6 +107,7 @@ docs/
 - **Validação:** Mensagens de sucesso e estados do carrinho.
 
 ### 6. Recuperação de Credenciais (Forgot Credentials)
+
 - **Arquivo:** `forgot-credentials.cy.js`
 - **Descrição:** Testa o fluxo de recuperação de senha, incluindo:
   - Recuperação bem-sucedida com e-mail válido
@@ -112,23 +118,30 @@ docs/
 ## Padrões de Desenvolvimento
 
 ### Service Layer
+
 Classes que encapsulam as interações com a página:
+
 - `AbstractService` - Classe base com métodos genéricos
 - Serviços específicos para cada fluxo (cadastro, login, checkout, recuperação de credenciais)
 
 ### Expectations Layer
+
 Classes para validações e assertions:
+
 - `AbstractExpectation` - Classe base com métodos genéricos
 - Expectations específicas para cada fluxo implementado
 
 ### Helpers
+
 - `RandomDataHelper` - Geração de dados aleatórios (email e usuário)
 - `CartHelper` - Limpeza de carrinho após testes
 
 ### Fixtures
+
 - `products.json`, `users.json`, `example.json` - Dados mockados para testes
 
 ### Gherkin Features
+
 - Especificação dos cenários em `.feature` para rastreabilidade e documentação
 
 ## Integração Contínua (CI/CD)
@@ -141,25 +154,32 @@ Classes para validações e assertions:
 ## Configuração do Ambiente
 
 ### Pré-requisitos
+
 - Node.js (versão 20 ou superior)
 - npm ou yarn
 
 ### Instalação
 
 1. Clone o repositório:
+
 ```bash
 git clone https://github.com/mariahinada/automation-test-store.git
 ```
+
 2. Instale as dependências:
+
 ```bash
 npm install
 ```
 
 3. Execute os testes localmente:
+
 ```bash
 npx cypress open
 ```
+
 ou
+
 ```bash
 npx cypress run
 ```

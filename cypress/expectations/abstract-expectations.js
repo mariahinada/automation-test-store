@@ -16,6 +16,6 @@ export class AbstractExpectation {
   }
 
   expectElementByText(elementType, text) {
-    cy.contains(elementType, text).should("exist")
+    cy.contains(elementType, text).should("exist");
   }
 }
