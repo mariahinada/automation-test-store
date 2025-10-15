@@ -20,6 +20,10 @@ export class AbstractService {
     cy.get(selector).type(value);
   }
 
+  clearInput(selector) {
+    cy.get(selector).clear()
+  }
+
   select(selector, option) {
     if (!option)
       throw new Error(
@@ -39,5 +43,9 @@ export class AbstractService {
 
   clickChildByText(text) {
     cy.contains(text).click({ force: true });
+  }
+
+  reloadPage() {
+    cy.reload();
   }
 }
