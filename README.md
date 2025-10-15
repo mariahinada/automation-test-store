@@ -41,7 +41,6 @@ cypress/
     products.json
     users.json
   helpers/
-    cart-helper.js
     random-data-helper.js
   services/
     abstract-service.js
@@ -67,7 +66,7 @@ docs/
     login.feature
 .github/
   workflows/
-    ci.yml
+    cypress.yml
 ```
 
 ## Cenários de Teste Implementados
