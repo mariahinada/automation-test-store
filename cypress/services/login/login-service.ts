@@ -1,4 +1,4 @@
-import { AbstractService } from "../abstract-service";
+import { AbstractService } from "../abstract-service.ts";
 
 export class LoginService extends AbstractService {
   elements = {

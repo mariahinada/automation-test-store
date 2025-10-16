@@ -8,7 +8,6 @@
     "format": "npx prettier --write .",
     "cypress:open": "npx cypress open",
     "cypress:run": "npx cypress run"
-
   },
   "keywords": [
     "testes",
@@ -18,7 +17,8 @@
   "author": "Mariah Inada",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^15.2.0"
+    "cypress": "^15.2.0",
+    "typescript": "^5.9.3"
   },
   "directories": {
     "doc": "docs"

@@ -1,7 +1,7 @@
 import { AbstractExpectation } from "../abstract-expectations";
 export class LoginExpectations extends AbstractExpectation {
   // login com sucesso
-  showUserLoggedIn(loginName) {
+  showUserLoggedIn(loginName: string) {
     if (!loginName)
       throw new Error("showUserLoggedIn: loginName não fornecido");
     this.expectUrlToBe(
