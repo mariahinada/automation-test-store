@@ -18,45 +18,45 @@ Este projeto realiza testes automatizados no site [Automation Test Store](https:
 cypress/
   e2e/
     login/
-      login.cy.js
+      login.cy.ts
     checkout/
-      checkout.cy.js
+      checkout.cy.ts
     create-account/
-      create-account-success.cy.js
-      create-account-invalid-user.cy.js
-      create-account-invalid-password.cy.js
+      create-account-success.cy.ts
+      create-account-invalid-user.cy.ts
+      create-account-invalid-password.cy.ts
     forgot-credentials/
-      forgot-credentials.cy.js
+      forgot-credentials.cy.ts
   expectations/
-    abstract-expectations.js
+    abstract-expectations.ts
     login/
-      login-expectations.js
+      login-expectations.ts
     checkout/
-      checkout-expectations.js
+      checkout-expectations.ts
     create-account/
-      create-account-success-expectations.js
-      create-account-invalid-user-expectations.js
-      create-account-invalid-password-expectations.js
+      create-account-success-expectations.ts
+      create-account-invalid-user-expectations.ts
+      create-account-invalid-password-expectations.ts
   fixtures/
-    products.json
-    users.json
+    products.tson
+    users.tson
   helpers/
-    random-data-helper.js
+    random-data-helper.ts
   services/
-    abstract-service.js
+    abstract-service.ts
     login/
-      login-service.js
+      login-service.ts
     checkout/
-      checkout-service.js
+      checkout-service.ts
     create-account/
-      create-account-success-service.js
-      create-account-invalid-user-service.js
-      create-account-invalid-password.service.js
+      create-account-success-service.ts
+      create-account-invalid-user-service.ts
+      create-account-invalid-password.service.ts
     forgot-credentials/
-      forgot-credentials-service.js
+      forgot-credentials-service.ts
   support/
-    commands.js
-    e2e.js
+    commands.ts
+    e2e.ts
 docs/
   README.md
   gherkin/
@@ -73,31 +73,31 @@ docs/
 
 ### 1. Cadastro Válido
 
-- **Arquivo:** `create-account-success.cy.js`
+- **Arquivo:** `create-account-success.cy.ts`
 - **Descrição:** Testa o fluxo completo de criação de conta com dados válidos.
 - **Validação:** Confirmação de conta criada com sucesso.
 
 ### 2. Cadastro com Usuário Inválido
 
-- **Arquivo:** `create-account-invalid-user.cy.js`
+- **Arquivo:** `create-account-invalid-user.cy.ts`
 - **Descrição:** Testa o fluxo com nome de usuário inválido (menos de 5 caracteres).
 - **Validação:** Mensagem de erro apropriada é exibida.
 
 ### 3. Cadastro com Senha Inválida
 
-- **Arquivo:** `create-account-invalid-password.cy.js`
+- **Arquivo:** `create-account-invalid-password.cy.ts`
 - **Descrição:** Testa o fluxo com senha inválida (menos de 4 caracteres).
 - **Validação:** Mensagem de erro apropriada é exibida.
 
 ### 4. Login
 
-- **Arquivo:** `login.cy.js`
+- **Arquivo:** `login.cy.ts`
 - **Descrição:** Testa o fluxo de login com credenciais válidas e inválidas.
 - **Validação:** Mensagens de sucesso e erro apropriadas.
 
 ### 5. Fluxo de Compra (Checkout)
 
-- **Arquivo:** `checkout.cy.js`
+- **Arquivo:** `checkout.cy.ts`
 - **Descrição:** Testa os principais fluxos de compra, incluindo:
   - Adição de produto simples ao carrinho
   - Adição de produto com variação ao carrinho
@@ -107,7 +107,7 @@ docs/
 
 ### 6. Recuperação de Credenciais (Forgot Credentials)
 
-- **Arquivo:** `forgot-credentials.cy.js`
+- **Arquivo:** `forgot-credentials.cy.ts`
 - **Descrição:** Testa o fluxo de recuperação de senha, incluindo:
   - Recuperação bem-sucedida com e-mail válido
   - Tentativa com e-mail inválido
@@ -137,7 +137,7 @@ Classes para validações e assertions:
 
 ### Fixtures
 
-- `products.json`, `users.json`, `example.json` - Dados mockados para testes
+- `products.tson`, `users.tson`, `example.tson` - Dados mockados para testes
 
 ### Gherkin Features
 
@@ -154,7 +154,7 @@ Classes para validações e assertions:
 
 ### Pré-requisitos
 
-- Node.js (versão 20 ou superior)
+- Node.ts (versão 20 ou superior)
 - npm ou yarn
 
 ### Instalação
