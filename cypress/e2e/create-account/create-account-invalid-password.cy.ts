@@ -1,4 +1,4 @@
-import { CreateAccountInvalidPasswordService } from "../../services/create-account/create-account-invalid-password.service";
+import { CreateAccountInvalidPasswordService } from "../../services/create-account/create-account-invalid-password-service";
 import { RandomDataHelper } from "../../helpers/random-data-helper";
 import { CreateAccountInvalidPasswordExpectations } from "../../expectations/create-account/create-account-invalid-password-expectations";
 
