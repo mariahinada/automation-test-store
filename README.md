@@ -9,7 +9,7 @@ Este projeto realiza testes automatizados no site [Automation Test Store](https:
 ## Tecnologias Utilizadas
 
 - **Cypress** (v15.2.0)
-- **JavaScript**
+- **TypeScript**
 - **GitHub Actions** (CI/CD)
 
 ## Estrutura do Projeto
