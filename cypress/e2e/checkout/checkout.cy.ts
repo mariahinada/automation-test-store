@@ -8,7 +8,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
 
   beforeEach(() => {
     cy.loginAndNavigateToHome();
-  });
+  }); 
 
   it("Adicionar produto simples ao carrinho", () => {
     service.clickSimpleProduct(products.simpleProduct);
