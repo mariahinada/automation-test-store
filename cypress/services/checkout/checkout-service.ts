@@ -24,11 +24,11 @@ export class CheckoutService extends AbstractService {
     this.click(this.elements.loginOrRegisterBtn);
   }
 
-  fillLoginName(loginName) {
+  fillLoginName(loginName : string) {
     this.type(this.elements.loginName, loginName);
   }
 
-  fillPassword(password) {
+  fillPassword(password : string) {
     this.type(this.elements.password, password);
   }
 
@@ -41,7 +41,7 @@ export class CheckoutService extends AbstractService {
   }
 
   // adiciona produto simples ao carrinho
-  clickSimpleProduct(productName) {
+  clickSimpleProduct(productName : string) {
     this.clickChildByText(productName);
   }
 
@@ -54,11 +54,11 @@ export class CheckoutService extends AbstractService {
   }
 
   // adiciona produto com variação ao carrinho
-  clickVariationProduct(productName) {
+  clickVariationProduct(productName : string) {
     this.clickChildByText(productName);
   }
 
-  selectVariationOption(optionValue) {
+  selectVariationOption(optionValue : string) {
     this.select(this.elements.variationOption, optionValue);
   }
 
