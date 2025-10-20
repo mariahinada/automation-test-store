@@ -1,5 +1,5 @@
-const VALID_USERNAME = "usuario";
-const VALID_PASSWORD = "senha123";
+const VALID_USERNAME: string = Cypress.env("auth")?.validUsername;
+const VALID_PASSWORD: string = Cypress.env("auth")?.validPassword;
 
 // navega para a página de login
 Cypress.Commands.add("navigateToLoginAndRegister", () => {
