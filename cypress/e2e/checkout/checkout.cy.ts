@@ -7,7 +7,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
   const expectation = new CheckoutExpectations();
 
   beforeEach(() => {
-    cy.loginAndNavigateToHome();
+    cy.loginAndNavigateToHome(); 
   }); 
 
   it("Adicionar produto simples ao carrinho", () => {
