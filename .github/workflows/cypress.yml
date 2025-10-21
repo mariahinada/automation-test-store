@@ -53,8 +53,9 @@ jobs:
       - name: Checar formatação (Prettier)
         run: npx prettier --write .
 
-      - name: Rodar testes Cypress
-        run: npx cypress run --headless --browser electron
+      - name: Rodar testes Cypress com Credenciais Injetadas
+        run: npx cypress run --headless --browser electron \
+          --env auth='{"validUsername":"${{ secrets.VALID_USERNAME }}","validPassword":"${{ secrets.VALID_PASSWORD }}"}'
 
       - name: Upload artifacts (screenshots, vídeos e reports)
         if: always()
