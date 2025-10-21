@@ -54,10 +54,13 @@ jobs:
         run: npx prettier --write .
 
       - name: Rodar testes Cypress com Credenciais Injetadas
+        env:
+          AUTH_USER: ${{ secrets.VALID_USERNAME }}
+          AUTH_PASS: ${{ secrets.VALID_PASSWORD }}
         run: npx cypress run --headless --browser electron \
-          --env auth='{"validUsername":"${{ secrets.VALID_USERNAME }}","validPassword":"${{ secrets.VALID_PASSWORD }}"}'
+          --env auth='{"validUsername":"$AUTH_USER","validPassword":"$AUTH_PASS"}'
 
-      - name: Upload artifacts (screenshots, vídeos e reports)
+      - name: (screenshots, vídeos e reports)
         if: always()
         uses: actions/upload-artifact@v4
         with:
