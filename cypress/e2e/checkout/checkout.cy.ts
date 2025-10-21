@@ -23,7 +23,7 @@ describe("Fluxo de Compra no Automation Test Store", () => {
     expectation.showVariationProductOnCart(products.variationProduct);
   });
 
-  it.only("Finalizar compra com sucesso", () => {
+  it("Finalizar compra com sucesso", () => {
     service.clickVariationProduct(products.variationProduct);
     service.selectVariationOption("664");
     service.clickCartBtn();
