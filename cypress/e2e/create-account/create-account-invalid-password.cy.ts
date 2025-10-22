@@ -1,9 +1,9 @@
-import { CreateAccountInvalidPasswordService } from "../../services/create-account/create-account-invalid-password-service";
+import { CreateAccountService } from "../../services/create-account/create-account-service";
 import { RandomDataHelper } from "../../helpers/random-data-helper";
 import { CreateAccountInvalidPasswordExpectations } from "../../expectations/create-account/create-account-invalid-password-expectations";
 
 describe("Criação de Conta no Automation Test Store", () => {
-  const service = new CreateAccountInvalidPasswordService();
+  const service = new CreateAccountService();
   const expectation = new CreateAccountInvalidPasswordExpectations();
 
   it("Cadastro com senha inválida", () => {

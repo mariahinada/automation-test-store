@@ -1,7 +1,7 @@
-import { AbstractService } from "../abstract-service";
+import { AbstractService } from '../abstract-service';
 
-export class CreateAccountInvalidUserService extends AbstractService {
-  elements = {
+export class CreateAccountService extends AbstractService {
+    elements = {
     loginOrRegisterBtn: "#customer_menu_top > li > a",
     continueBtnToRegister: "#accountFrm > fieldset > .btn",
     firstName: "#AccountFrm_firstname",
@@ -22,74 +22,77 @@ export class CreateAccountInvalidUserService extends AbstractService {
     newsletter: "#AccountFrm_newsletter1",
     privacyPolicy: "#AccountFrm_agree",
     continueBtnToFinish: ".col-md-2 > .btn",
-    invalidUserAlert:
-      "#maincontainer > div > div > div > div.alert.alert-error.alert-danger",
+    successMessage: ".maintext",
+    invalidUserAlert:"#maincontainer > div > div > div > div.alert.alert-error.alert-danger",
+    invalidPasswordAlert:
+    "#maincontainer > div > div > div > div.alert.alert-error.alert-danger",
   };
 
-  clickLoginOrRegister() {
+clickLoginOrRegister() {
     this.click(this.elements.loginOrRegisterBtn);
   }
 
   clickContinueBtnToRegister() {
     this.click(this.elements.continueBtnToRegister);
   }
-  fillFirstName(name) {
+
+  fillFirstName(name : string) {
     this.type(this.elements.firstName, name);
   }
 
-  fillLastName(lastName) {
+  fillLastName(lastName : string) {
     this.type(this.elements.lastName, lastName);
   }
 
-  fillEmail(email) {
+  fillEmail(email : string) {
     this.type(this.elements.emailAddress, email);
   }
 
-  fillTelephone(telephone) {
+  fillTelephone(telephone : string) {
     this.type(this.elements.telephone, telephone);
   }
 
-  fillFax(fax) {
+  fillFax(fax : string) {
     this.type(this.elements.fax, fax);
   }
 
-  fillCompany(company) {
+  fillCompany(company : string) {
     this.type(this.elements.company, company);
   }
 
-  fillAddress1(address) {
+  fillAddress1(address : string) {
     this.type(this.elements.address1, address);
   }
 
-  fillAddress2(address) {
+  fillAddress2(address : string) {
     this.type(this.elements.address2, address);
   }
 
-  fillCity(city) {
+  fillCity(city : string) {
     this.type(this.elements.city, city);
   }
 
-  selectState(state) {
+  selectState(state : string) {
     this.select(this.elements.state, state);
   }
 
-  fillZipCode(zip) {
+  fillZipCode(zip : string) {
     this.type(this.elements.zipCode, zip);
   }
 
-  selectCountry(country) {
+  selectCountry(country : string) {
     this.select(this.elements.country, country);
   }
 
-  fillLoginName(loginName) {
+  fillLoginName(loginName : string) {
     this.type(this.elements.loginName, loginName);
   }
 
-  fillPassword(password) {
+  fillPassword(password : string) {
     this.type(this.elements.password, password);
   }
 
-  fillConfirmPassword(password) {
+  fillConfirmPassword(password : string) {
     this.type(this.elements.confirmPassword, password);
   }
 
@@ -105,7 +108,16 @@ export class CreateAccountInvalidUserService extends AbstractService {
     this.click(this.elements.continueBtnToFinish);
   }
 
-  showInvalidUserAlert() {
-    this.get(this.elements.invalidUserAlert);
+  showSuccessMessage() {
+    this.getText(this.elements.successMessage);
   }
+
+    showInvalidUserAlert() {
+    this.getText(this.elements.invalidUserAlert);
+  }
+
+    showInvalidPasswordAlert() {
+    this.getText(this.elements.invalidPasswordAlert);
+  }
+
 }
