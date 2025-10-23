@@ -45,9 +45,7 @@ cypress/
   - checkout/
     - checkout-service.ts
   - create-account/
-    - create-account-success-service.ts
-    - create-account-invalid-user-service.ts
-    - create-account-invalid-password.service.ts
+    - create-account-service.ts
   - forgot-credentials/
     - forgot-credentials-service.ts
 - support/
