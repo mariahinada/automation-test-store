@@ -1,6 +1,6 @@
 import { CreateAccountService } from "../../services/create-account/create-account-service";
 import { RandomDataHelper } from "../../helpers/random-data-helper";
-import { CreateAccountSuccessExpectations } from "../../expectations/create-account/create-account-success-expectations";
+import { CreateAccountSuccessExpectations } from "../../expectations/create-account/create-account-expectations";
 
 describe("Cadastro válido", () => {
   const service = new CreateAccountService();
