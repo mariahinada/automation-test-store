@@ -1,4 +1,4 @@
-import { ForgotCredentialsService } from "../../services/forgot-credentials/forgot-credentials-service";
+import { ForgotCredentialsService } from "../../services/forgot-credentials/forgot-credentials-services";
 import { ForgotCredentialsExpectations } from "../../expectations/forgot-credentials/forgot-credentials-expectations";
 
 describe("Recuperação de Credenciais no Automation Test Store", () => {

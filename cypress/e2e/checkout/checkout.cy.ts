@@ -1,4 +1,4 @@
-import { CheckoutService } from "../../services/checkout/checkout-service";
+import { CheckoutService } from "../../services/checkout/checkout-services";
 import { CheckoutExpectations } from "../../expectations/checkout/checkout-expectations";
 import products from "../../fixtures/products.json";
 

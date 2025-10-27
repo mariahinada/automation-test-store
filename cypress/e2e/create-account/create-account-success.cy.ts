@@ -1,4 +1,4 @@
-import { CreateAccountService } from "../../services/create-account/create-account-service";
+import { CreateAccountService } from "../../services/create-account/create-account-services";
 import { RandomDataHelper } from "../../helpers/random-data-helper";
 import { CreateAccountSuccessExpectations } from "../../expectations/create-account/create-account-expectations";
 

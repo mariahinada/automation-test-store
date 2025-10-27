@@ -1,4 +1,4 @@
-import { AbstractService } from "../abstract-service";
+import { AbstractService } from "../abstract-services";
 
 export class ForgotCredentialsService extends AbstractService {
   elements = {

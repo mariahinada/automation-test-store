@@ -1,5 +1,5 @@
 // cypress/e2e/login/login.cy.js
-import { LoginService } from "../../services/login/login-service";
+import { LoginService } from "../../services/login/login-services";
 import { LoginExpectations } from "../../expectations/login/login-expectations";
 import users from "../../fixtures/users.json";
 

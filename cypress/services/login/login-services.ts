@@ -1,4 +1,4 @@
-import { AbstractService } from "../abstract-service.ts";
+import { AbstractService } from "../abstract-services.js";
 
 export class LoginService extends AbstractService {
   elements = {
@@ -12,11 +12,11 @@ export class LoginService extends AbstractService {
     this.click(this.elements.loginOrRegisterBtn);
   }
 
-  fillLoginName(loginName) {
+  fillLoginName(loginName : string) {
     this.type(this.elements.loginName, loginName);
   }
 
-  fillPassword(password) {
+  fillPassword(password : string) {
     this.type(this.elements.password, password);
   }
 

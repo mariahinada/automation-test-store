@@ -1,4 +1,4 @@
-import { AbstractService } from "../abstract-service";
+import { AbstractService } from "../abstract-services";
 
 export class CheckoutService extends AbstractService {
   elements = {
